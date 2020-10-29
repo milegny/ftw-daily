@@ -25,6 +25,7 @@ const ConfirmSignupFormComponent = props => (
         intl,
         onOpenTermsOfService,
         authInfo,
+        idp,
       } = fieldRenderProps;
 
       // email
@@ -95,7 +96,7 @@ const ConfirmSignupFormComponent = props => (
       }
 
       // Initial values from idp provider
-      const { email, firstName, lastName, idpId } = authInfo;
+      const { email, firstName, lastName } = authInfo;
 
       return (
         <Form className={classes} onSubmit={handleSubmit}>
@@ -146,7 +147,7 @@ const ConfirmSignupFormComponent = props => (
               </span>
             </p>
             <PrimaryButton type="submit" inProgress={submitInProgress} disabled={submitDisabled}>
-              <FormattedMessage id="ConfirmSignupForm.signUp" values={{ idp: idpId }} />
+              <FormattedMessage id="ConfirmSignupForm.signUp" values={{ idp: idp }} />
             </PrimaryButton>
           </div>
         </Form>
